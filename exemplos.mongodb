@@ -1,0 +1,42 @@
+// Exibir os bancos de dados
+show databases
+
+// Criar / Selecionar banco de dados
+use streaming_musica
+
+// Criar nova collection
+db.createCollection("faixas")
+
+// Mostrar todas as collections
+show collections
+
+// Mostrar todos os documentos/objetos
+db.faixas.find()
+
+// Inserir apenas 1 document (objeto com array e objeto embutido)
+db.faixas.insertOne({
+  "titulo": "Bohemian Rhapsody",
+  "artista": "Queen",
+  "duracao_segundos": 354,
+  "generos": ["Rock Progressivo", "Hard Rock", "Ópera"],
+  "album": {
+    "nome": "A Night at the Opera",
+    "ano_lancamento": 1975,
+    "gravadora": "EMI Records"
+  }
+})
+
+// Inserir muitos documents de uma vez
+db.faixas.insertMany([
+  { "titulo": "Gostava Tanto de Você", "artista": "Tima Maia" },
+  { "titulo": "Creep", "artista": "Radiohead" },
+  { "titulo": "Na hora do almoço", "artista": "Belchior" },
+  { "titulo": "Billie Jean", "artista": "Michael Jackson" },
+  { "titulo": "Garota de Ipanema", "artista": "Tom Jobim" }
+])
+
+// Buscar pelo campo
+db.faixas.find({ "titulo": "Billie Jean" })
+
+// Buscar pelo identificador único
+db.faixas.find({ _id: ObjectId('664fc8b1a3d94e21a8f90c44') })
