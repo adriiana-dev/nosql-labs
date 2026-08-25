@@ -28,15 +28,16 @@ db.faixas.insertOne({
 
 // Inserir muitos documents de uma vez
 db.faixas.insertMany([
-  { "titulo": "Gostava Tanto de Você", "artista": "Tima Maia" },
+  { "titulo": "Gostava Tanto de Você", "artista": "Tim Maia" },
   { "titulo": "Creep", "artista": "Radiohead" },
   { "titulo": "Na hora do almoço", "artista": "Belchior" },
   { "titulo": "Billie Jean", "artista": "Michael Jackson" },
-  { "titulo": "Garota de Ipanema", "artista": "Tom Jobim" }
+  { "titulo": "Apenas Um Rapaz Latino Americano", "artista": "Belchior" }
+  { "titulo": "Eu Te Devoro", "artista": "Djavan" },
 ])
 
 // Buscar pelo campo
-db.faixas.find({ "titulo": "Billie Jean" })
+db.faixas.find({ "titulo": "Gostava Tanto de Você" })
 
 // Buscar pelo identificador único
 db.faixas.find({ _id: ObjectId('664fc8b1a3d94e21a8f90c44') })
