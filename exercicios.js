@@ -165,5 +165,5 @@ db.customers.find().sort({ name: 1 })
 // 9. Mostrar apenas os três primeiros clientes
 db.customers.find().limit(3)
 
-// Mostrar apenas os clientes inativos
+// 10. Mostrar apenas os clientes inativos
 db.customers.find({ active: false })
